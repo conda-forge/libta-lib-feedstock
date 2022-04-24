@@ -21,6 +21,8 @@ build:
 
 requirements:
   build:
+    - gnuconfig  # [unix]
+    - make       # [unix]
     - {{ compiler('c') }}
 
 test:
