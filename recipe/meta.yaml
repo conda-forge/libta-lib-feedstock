@@ -23,6 +23,7 @@ requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
+    - make       # [unix]
 
 test:
   commands:
