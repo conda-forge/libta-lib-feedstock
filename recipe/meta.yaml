@@ -21,7 +21,7 @@ build:
 
 requirements:
   build:
-    - make # [unix]
+    - make  # [unix]
     - {{ compiler('c') }}
 
 test:
