@@ -1,6 +1,6 @@
 setlocal EnableDelayedExpansion
 
-pushd win
+pushd src
 
 pushd c
 for %%l in (cdd cdr cmd cmr csd csr) do (
