@@ -1,9 +1,12 @@
 #!/bin/bash
-# Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./src
+cd src
 
-pushd src
+mkdir build
 
-./configure --prefix=$PREFIX
-make
-make install
+cd build
+mkdir out
+
+cmake ..
+cmake --build .
+
+cmake --install . --prefix=$PREFIX
