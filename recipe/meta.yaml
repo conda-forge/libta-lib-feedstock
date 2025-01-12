@@ -10,6 +10,9 @@ source:
   - url: https://github.com/TA-Lib/ta-lib/releases/download/v{{ version }}/ta-lib-{{ version }}-src.tar.gz
     sha256: aa04066d17d69c73b1baaef0883414d3d56ab3775872d82916d1cdb376a3ae86                   
     folder: src
+  - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: a2fac51f4f1d4804dd2edd1701d52bb9728a5c2ec936d0c5d9a222c49f57d77b                   
+    folder: repo_code
 
 build:
   number: 0
@@ -43,8 +46,8 @@ about:
   home: https://ta-lib.org/index.html
   summary: "TA-Lib : Technical Analysis Library"
   license: BSD-2-Clause
-  # License is included in windows source download, but not unix:
-  license_file: src/LICENSE.TXT
+  # License is included in the repo, not in the src package:
+  license_file: repo_code/LICENSE.TXT
 
 extra:
   recipe-maintainers:
