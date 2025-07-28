@@ -48,7 +48,7 @@ about:
   summary: "TA-Lib : Technical Analysis Library"
   license: BSD-2-Clause
   # License is included in windows source download, but not unix:
-  license_file: win/LICENSE.TXT
+  license_file: win/LICENSE
 
 extra:
   recipe-maintainers:
