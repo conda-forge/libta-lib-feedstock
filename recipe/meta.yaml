@@ -29,15 +29,17 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libta_lib${SHLIB_EXT}     # [unix]
+    - test -f $PREFIX/lib/libta-lib${SHLIB_EXT}     # [unix]
     - test -f $PREFIX/include/ta-lib/ta_abstract.h  # [unix]
     - test -f $PREFIX/include/ta-lib/ta_common.h    # [unix]
     - test -f $PREFIX/include/ta-lib/ta_defs.h      # [unix]
     - test -f $PREFIX/include/ta-lib/ta_func.h      # [unix]
+    - test -f $PREFIX/include/ta-lib/ta_libc.h      # [unix]
     - if exist %LIBRARY_INC%\ta_abstract.h (exit 0) else (exit 1)         # [win]
     - if exist %LIBRARY_INC%\ta_common.h (exit 0) else (exit 1)           # [win]
     - if exist %LIBRARY_INC%\ta_defs.h (exit 0) else (exit 1)             # [win]
     - if exist %LIBRARY_INC%\ta_func.h (exit 0) else (exit 1)             # [win]
+    - if exist %LIBRARY_INC%\ta_libc.h (exit 0) else (exit 1)             # [win]
     - if exist %LIBRARY_LIB%\ta_abstract_cdd.lib (exit 0) else (exit 1)   # [win]
     - if exist %LIBRARY_LIB%\ta_common_cdr.lib (exit 0) else (exit 1)     # [win]
     - if exist %LIBRARY_LIB%\ta_func_cmd.lib (exit 0) else (exit 1)       # [win]
