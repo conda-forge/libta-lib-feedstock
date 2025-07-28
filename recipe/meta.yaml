@@ -40,11 +40,9 @@ test:
     - if exist %LIBRARY_INC%\ta_defs.h (exit 0) else (exit 1)             # [win]
     - if exist %LIBRARY_INC%\ta_func.h (exit 0) else (exit 1)             # [win]
     - if exist %LIBRARY_INC%\ta_libc.h (exit 0) else (exit 1)             # [win]
-    - if exist %LIBRARY_LIB%\ta_abstract_cdd.lib (exit 0) else (exit 1)   # [win]
-    - if exist %LIBRARY_LIB%\ta_common_cdr.lib (exit 0) else (exit 1)     # [win]
-    - if exist %LIBRARY_LIB%\ta_func_cmd.lib (exit 0) else (exit 1)       # [win]
-    - if exist %LIBRARY_LIB%\ta_libc_csd.lib (exit 0) else (exit 1)       # [win]
-    - if exist %LIBRARY_LIB%\ta_libc_csr.lib (exit 0) else (exit 1)       # [win]
+    - if exist %LIBRARY_LIB%\ta-lib.lib (exit 0) else (exit 1)       # [win]
+    - if exist %LIBRARY_LIB%\ta-lib-static.lib (exit 0) else (exit 1)       # [win]
+    - if exist %LIBRARY_BIN%\ta-lib.dll (exit 0) else (exit 1)         # [win]
 
 about:
   home: https://ta-lib.org/index.html
