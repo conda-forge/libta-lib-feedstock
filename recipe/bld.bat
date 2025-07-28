@@ -2,15 +2,24 @@ setlocal EnableDelayedExpansion
 
 pushd win
 
-pushd c
-for %%l in (cdd cdr cmd cmr csd csr) do (
-    pushd "make\%%l\win32\msvc"
+:: Make a build folder and change to it.
+mkdir build
+pushd build
 
-    nmake
-    IF !ERRORLEVEL! NEQ 0 exit 1
+:: Configure using the CMakeFiles
+cmake -G "NMake Makefiles" ^
+      -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_BUILD_TYPE:STRING=Release ^
+      ..
+if errorlevel 1 exit 1
 
-    popd
-)
-copy include\*.h %LIBRARY_INC%
-copy lib\*.lib %LIBRARY_LIB%
+:: Build!
+nmake
+if errorlevel 1 exit 1
+
+:: Install!
+nmake install
+if errorlevel 1 exit 1
+
 popd
