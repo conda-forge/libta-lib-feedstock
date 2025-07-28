@@ -1,5 +1,5 @@
 {% set name = "libta-lib" %}
-{% set version = "0.4.0" %}
+{% set version = "0.6.4" %}
 
 
 package:
@@ -7,15 +7,15 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz  # [unix]
-    sha256: 9ff41efcb1c011a4b4b6dfc91610b06e39b1d7973ed5d4dee55029a0ac4dc651                    # [unix]
+  - url: https://github.com/ta-lib/ta-lib/releases/download/v0.6.4/ta-lib-0.6.4-src.tar.gz  # [unix]
+    sha256: aa04066d17d69c73b1baaef0883414d3d56ab3775872d82916d1cdb376a3ae86                    # [unix]
     folder: unix                                                                                # [unix]
-  - url: https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-msvc.zip
-    sha256: 2dae7a1391222f0a7e601ecda654f93cebedfdb37afeb30df2721a3b0a717875
+  - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v0.6.4.zip
+    sha256: 33e99e0f4c2102b544619e038a00169d5b2f0577c5328e5736f3c5c443ed49bd
     folder: win
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
