@@ -25,7 +25,7 @@ if errorlevel 1 exit 1
 popd
 
 :: Copy files to correct locations because CMakeLists.txt overrides the it even if we set the install prefix
-:: Try both C:/Program Files (x86)/ and C:/Program Files/ to ensure we find the correct one
+:: Try both C:/Program Files (x86)/ and C:/Program Files/ to ensure we find the files
 for %%l in ("Program Files" "Program Files (x86)") do (
     pushd "C:\%%l\TA-Lib"
     copy /Y /B "lib\ta-lib.lib" "%LIBRARY_LIB%\ta-lib.lib"
