@@ -1,16 +1,13 @@
 setlocal EnableDelayedExpansion
 
-pushd win
+cd src
 
-pushd c
-for %%l in (cdd cdr cmd cmr csd csr) do (
-    pushd "make\%%l\win32\msvc"
+mkdir build
 
-    nmake
-    IF !ERRORLEVEL! NEQ 0 exit 1
+cd build
+mkdir out
 
-    popd
-)
-copy include\*.h %LIBRARY_INC%
-copy lib\*.lib %LIBRARY_LIB%
-popd
+cmake ..
+cmake --build .
+
+cmake --install . --prefix=%PREFIX%
