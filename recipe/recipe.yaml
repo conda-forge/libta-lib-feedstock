@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: libta-lib
-  version: "0.6.4"
+  version: "0.7.1"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v0.6.4.zip
-    sha256: 33e99e0f4c2102b544619e038a00169d5b2f0577c5328e5736f3c5c443ed49bd
+  - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 40e7a6978052fe5245771e430e6a4c4553b40038f8ac5a985a1540c4c1fa6ace
 
 build:
   number: 0
