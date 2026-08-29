@@ -1,7 +1,5 @@
 setlocal EnableDelayedExpansion
 
-pushd win
-
 :: Make a build folder and change to it.
 mkdir build
 pushd build

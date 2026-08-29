@@ -1,9 +1,7 @@
 #!/bin/bash
-# Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./unix
 
-pushd unix
+set -e -x
 
-./configure --prefix=$PREFIX
-make -j$(nproc)
-make install
+cmake ${CMAKE_ARGS} -S. -Bbuild -G Ninja
+cmake --build build
+cmake --install build
