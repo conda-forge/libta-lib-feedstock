@@ -11,6 +11,8 @@ package:
 source:
   - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v${{ version }}.tar.gz
     sha256: 40e7a6978052fe5245771e430e6a4c4553b40038f8ac5a985a1540c4c1fa6ace
+    patches:
+      - patches/win-paths.patch
 
 build:
   number: 0

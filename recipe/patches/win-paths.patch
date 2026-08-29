@@ -1,0 +1,17 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fe9dede53..72219f406 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,12 +23,6 @@ if(NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
+ endif()
+ 
+ if(WIN32)
+-    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+-        set(CMAKE_INSTALL_PREFIX "C:/Program Files/TA-Lib" CACHE PATH "Installation Directory" FORCE)
+-    else()
+-        set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TA-Lib" CACHE PATH "Installation Directory" FORCE)
+-    endif()
+-
+ 	if(DEFINED ENV{Platform})
+     	set(PLATFORM_ENV $ENV{Platform})
+     	message(STATUS "Platform environment variable: ${PLATFORM_ENV}")
