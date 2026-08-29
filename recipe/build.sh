@@ -5,5 +5,5 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./unix
 pushd unix
 
 ./configure --prefix=$PREFIX
-make
+make -j$(nproc)
 make install
