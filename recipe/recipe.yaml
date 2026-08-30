@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: libta-lib
+  version: "0.7.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 40e7a6978052fe5245771e430e6a4c4553b40038f8ac5a985a1540c4c1fa6ace
+    patches:
+      - patches/win-paths.patch
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - if: unix
+      then: ninja
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - package_contents:
+      lib:
+        - ta-lib
+      include:
+        - ta-lib/ta_abstract.h
+        - ta-lib/ta_common.h
+        - ta-lib/ta_defs.h
+        - ta-lib/ta_func.h
+        - ta-lib/ta_libc.h
+      files:
+        - if: win
+          then: Library/lib/ta-lib-static.lib
+
+about:
+  summary: "TA-Lib : Technical Analysis Library"
+  license: BSD-2-Clause
+  license_file: LICENSE
+  homepage: https://ta-lib.org/index.html
+
+extra:
+  recipe-maintainers:
+    - sanurielf
+    - gerrymanoim
+    - llllllllll
+    - richafrank
+    - mgorny
