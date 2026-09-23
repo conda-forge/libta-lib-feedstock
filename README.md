@@ -226,6 +226,3 @@ Feedstock Maintainers
 * [@richafrank](https://github.com/richafrank/)
 * [@sanurielf](https://github.com/sanurielf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
