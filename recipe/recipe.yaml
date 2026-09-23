@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: libta-lib
-  version: "0.7.1"
+  version: "0.8.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,9 +10,7 @@ package:
 
 source:
   - url: https://github.com/TA-Lib/ta-lib/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 40e7a6978052fe5245771e430e6a4c4553b40038f8ac5a985a1540c4c1fa6ace
-    patches:
-      - patches/win-paths.patch
+    sha256: b30f58c24587f5ac46abe7caded1b49c3e1639ca177f4f51079d4fe051a5fae1
 
 build:
   number: 0
